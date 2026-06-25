@@ -1,6 +1,6 @@
 # Discord Favorite Manager
 
-A single-file local browser tool for managing Discord favorite GIF settings.
+A local browser tool for managing Discord favorite GIF settings.
 
 ## Features
 
@@ -16,6 +16,18 @@ A single-file local browser tool for managing Discord favorite GIF settings.
 ## Usage
 
 Serve the folder locally and open `index.html`:
+
+```powershell
+npm run serve
+```
+
+Or without npm:
+
+```powershell
+node server.mjs
+```
+
+Python also works:
 
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1

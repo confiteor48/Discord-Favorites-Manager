@@ -1,0 +1,10 @@
+{
+  "name": "discord-favorite-manager",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "node server.mjs",
+    "start": "node server.mjs"
+  }
+}
