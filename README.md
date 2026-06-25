@@ -15,7 +15,7 @@ A single-file local browser tool for managing Discord favorite GIF settings.
 
 ## Usage
 
-Serve the folder locally and open `preview.html`:
+Serve the folder locally and open `index.html`:
 
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1
@@ -24,10 +24,12 @@ python -m http.server 8765 --bind 127.0.0.1
 Then open:
 
 ```text
-http://127.0.0.1:8765/preview.html
+http://127.0.0.1:8765/index.html
 ```
 
-Using `file://` works for manual JSON loading, but local HTTP is recommended for the built-in `gifs.json` autoload path.
+`preview.html` is kept as a compatibility redirect to `index.html`.
+
+Using `file://` works for manual JSON loading, but local HTTP is recommended for the built-in `gifs.json` autoload path and Discord API calls.
 
 ## Token Notes
 

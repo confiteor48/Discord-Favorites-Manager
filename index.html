@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discord Favorite Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div>
+        <h1>Discord Favorites Manager</h1>
+        <div class="subtle" id="status">Because discord wants to make it hard to manage your favorite GIFs</div>
+      </div>
+      <div class="controls">
+        <input id="fileInput" type="file" accept="application/json,.json">
+        <input id="discordToken" type="password" placeholder="Source Token (optional)" autocomplete="off" spellcheck="false">
+        <input id="search" type="search" placeholder="Search URLs, paths, ids">
+        <select id="formatFilter" aria-label="Filter by format">
+          <option value="all">All formats</option>
+          <option value="IMAGE">Images</option>
+          <option value="VIDEO">Videos</option>
+          <option value="OTHER">Other media</option>
+        </select>
+        <select id="sort" aria-label="Sort media">
+          <option value="slot">Slot / path</option>
+          <option value="source">Source</option>
+          <option value="size">Largest first</option>
+          <option value="format">Format</option>
+        </select>
+        <button id="fetchSettings" type="button">Fetch gifs</button>
+        <button id="refreshUrls" type="button">Refresh URLs</button>
+        <details class="tools">
+          <summary>Tools</summary>
+          <div class="tool-panel">
+            <input id="targetDiscordToken" type="password" placeholder="Target Token (optional)" autocomplete="off" spellcheck="false">
+            <input id="targetFileInput" type="file" accept="application/json,.json" title="Target JSON for merge/override base">
+            <select id="selectMenu" aria-label="Selection actions">
+              <option value="">Select...</option>
+              <option value="shown">Shown</option>
+              <option value="failed">Failed</option>
+              <option value="clear">Clear</option>
+            </select>
+            <select id="patchMode" aria-label="Patch mode">
+              <option value="override">Override GIFs</option>
+              <option value="merge">Merge GIFs</option>
+            </select>
+            <select id="mergePlacement" aria-label="Merge placement">
+              <option value="above">Selection above existing</option>
+              <option value="below">Selection below existing</option>
+            </select>
+            <button id="removeFailed" type="button" disabled title="Remove previews that failed to load">Remove failed</button>
+            <button id="removeSelected" type="button" disabled>Remove selected</button>
+            <button id="patchSelected" type="button" disabled>Patch selected</button>
+            <button id="patchDiscord" type="button">Patch All</button>
+            <button id="downloadJson" type="button">Download JSON</button>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="dropzone" class="dropzone">
+      <div>
+        <strong>Load `gifs.json` or another Discord export JSON.</strong>
+        <div class="subtle">Media entries are detected from fields like `src`, `url`, `format`, `width`, and `height`.</div>
+      </div>
+    </div>
+    <div id="stats" class="stats"></div>
+    <section class="section">
+      <div class="section-head">
+        <h2>Media</h2>
+        <div class="subtle" id="mediaCount"></div>
+      </div>
+      <div id="mediaGrid" class="grid"></div>
+    </section>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
