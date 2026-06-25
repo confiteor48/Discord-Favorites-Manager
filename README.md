@@ -13,6 +13,16 @@ A local browser tool for managing Discord favorite GIF settings.
 - Select, remove, drag-reorder, merge, and patch favorite GIFs back to Discord.
 - Preserve non-GIF settings while replacing or merging only `favorite_gifs`.
 
+## Screenshots
+
+Main GIF manager view:
+
+![Discord Favorite Manager overview](docs/screenshots/overview.png)
+
+Selection and patch tools:
+
+![Discord Favorite Manager tools panel](docs/screenshots/tools-selection.png)
+
 ## Usage
 
 Serve the folder locally and open `index.html`:
